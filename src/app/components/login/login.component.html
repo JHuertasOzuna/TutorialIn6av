@@ -1,0 +1,31 @@
+<div class="container main-container">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <h1 class="text-center">LogIn</h1>
+      <hr>
+      <form [formGroup]="formularioLogin" (ngSubmit)="iniciarSesion()">
+        <div class="form-group">
+          <label for="nick">Nick</label>
+          <input type="text"
+          class="form-control"
+          placeholder="Ingrese su nick"
+          formControlName="nick">
+        </div>
+        <div class="form-group">
+          <label for="nick">Contraseña</label>
+          <input type="password"
+          class="form-control"
+          placeholder="Ingrese su contraseña"
+          formControlName="contrasena">
+        </div>
+        <div class="form-group">
+          <button type="submit"
+            [disabled]="!formularioLogin.valid"
+            class="btn btn-outline-primary btn-block">
+            Iniciar Sesion
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
