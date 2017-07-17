@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { ContactoFormComponent } from './contacto/contacto-form.component';
 import { TareaComponent } from './tarea/tarea.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
@@ -10,6 +11,7 @@ import { usuario_routes } from './usuario/usuario.routes';
 export const dashboard_routes:Routes = [
   { path: 'categoria', component: CategoriaComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'contacto/:idContacto', component: ContactoFormComponent },
   { path: 'tarea', component: TareaComponent },
   {
     path: 'usuario',

@@ -1,0 +1,61 @@
+<h1>Contacto <small>{{ contacto.nombre + " " + contacto.apellido | lowercase }}</small></h1>
+<button class="btn btn-outline-primary"
+[routerLink]="['/dashboard/contacto/nuevo']">
+  Nuevo Contacto
+</button>
+<button class="btn btn-outline-secondary"
+[routerLink]="['/dashboard/contacto']">
+  Regresar
+</button>
+<hr>
+<div *ngIf="notificacion.estado"
+class="alert alert-success alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>{{ notificacion.mensaje }}</strong>.
+</div>
+<form #formularioContacto="ngForm" (ngSubmit)="guardarCambios()">
+  <div class="form-group">
+    <label>Nombre</label>
+    <input type="text" class="form-control"
+    placeholder="Ingrese su nombre"
+    [(ngModel)]="contacto.nombre"
+    name="nombre">
+  </div>
+  <div class="form-group">
+    <label>Apellido</label>
+    <input type="text" class="form-control"
+    placeholder="Ingrese su apellido"
+    [(ngModel)]="contacto.apellido"
+    name="apellido">
+  </div>
+  <div class="form-group">
+    <label>Direccion</label>
+    <input type="text" class="form-control"
+    placeholder="Ingrese su direccion"
+    [(ngModel)]="contacto.direccion"
+    name="direccion">
+  </div>
+  <div class="form-group">
+    <label>Telefono</label>
+    <input type="text" class="form-control"
+    placeholder="Ingrese su telefono"
+    [(ngModel)]="contacto.telefono"
+    name="telefono">
+  </div>
+  <div class="form-group">
+    <label>Categoria</label>
+    <select class="form-control"
+    name="idCategoria"
+    [(ngModel)]="contacto.idCategoria">
+      <option value="0">Seleccione una opcion</option>
+      <option value="1">Amigos</option>
+      <option value="2">Colegio</option>
+      <option value="3">Trabajo</option>
+      <option value="4">Universidad</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

@@ -46,7 +46,10 @@ export class UsuarioService {
       localStorage.setItem('token', token);
     }
   }
-
+  public getToken():string {
+    return localStorage.getItem('token');
+  }
+  
   public setCurrentUser(usuario:any) {
     localStorage.setItem('currentUser', usuario);
   }
